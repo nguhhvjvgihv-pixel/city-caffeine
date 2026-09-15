@@ -1,18 +1,40 @@
-.hero {
-  position: relative;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 1.5rem;
-  background-image: linear-gradient(
-      rgba(15, 12, 10, 0.65), 
-      rgba(15, 12, 10, 0.75)
-    ), 
-    url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1600&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
+<!-- قسم الـ Hero الجديد والفنان -->
+<section class="hero">
+  <!-- طبقة التعتيم الخلفية -->
+  <div class="hero-overlay"></div>
+  
+  <div class="container hero-container">
+    <div class="hero-content">
+      <span class="hero-subtitle">CITY CAFFEINE</span>
+      <h1 class="hero-title">
+        <span class="text-white">.Good Coffee</span><br>
+        <span class="text-accent">.Better Days</span>
+      </h1>
+      <p class="hero-description">قهوتك المفضلة، بطريقتنا. اطلب مسبقاً واستلمها جاهزة، لتستمتع بكل لحظة من يومك.</p>
+      
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-primary">شوف المنيو</a>
+        <a href="https://wa.me/yourphone" class="btn btn-secondary">اطلب عبر واتساب</a>
+      </div>
+      
+      <div class="hero-features">
+        <div class="feature-item"><span class="icon">☕</span> قهوة طازجة</div>
+        <div class="feature-item"><span class="icon">⚡</span> طلب مسبق</div>
+        <div class="feature-item"><span class="icon">❤️</span> مزاج أحسن</div>
+      </div>
+    </div>
+    
+    <!-- قسم الصور التفصيلية على اليمين -->
+    <div class="hero-images">
+      <div class="image-wrapper img-1">
+        <img src="https://images.unsplash.com/photo-1595434091143-b375ace5d516?q=80&w=600&auto=format&fit=crop" alt="Pour over coffee detail">
+      </div>
+      <div class="image-wrapper img-2">
+        <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?q=80&w=600&auto=format&fit=crop" alt="Coffee cup detail">
+      </div>
+      <div class="image-wrapper img-3">
+        <img src="https://images.unsplash.com/photo-1514432324605-6ed47f75172f?q=80&w=600&auto=format&fit=crop" alt="Cafe atmosphere">
+      </div>
+    </div>
+  </div>
+</section>
