@@ -267,3 +267,125 @@ body {
   .img-2 { width: 140px; height: 140px; left: 5%; bottom: 10px; }
   .img-3 { display: none; }
 }
+/* --- Menu Section Styling --- */
+.menu-section {
+  padding: 5rem 1.5rem;
+  background-color: #0d0a08;
+  direction: rtl;
+  position: relative;
+  z-index: 3;
+}
+
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.menu-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8),
+              0 0 20px rgba(212, 163, 115, 0.2);
+}
+
+.menu-img {
+  height: 200px;
+  overflow: hidden;
+}
+
+.menu-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.menu-card:hover .menu-img img {
+  transform: scale(1.1);
+}
+
+.menu-info {
+  padding: 1.5rem;
+}
+
+.menu-info h3 {
+  font-size: 1.25rem;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+}
+
+.menu-info p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.menu-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.order-btn {
+  background: rgba(212, 163, 115, 0.15);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85rem;
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+  background: var(--primary);
+  color: #0f0c0a;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #060504;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
