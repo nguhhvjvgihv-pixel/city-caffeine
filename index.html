@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CITY CAFFEINE | Good Coffee. Better Days.</title>
+  <meta name="description" content="CITY CAFFEINE — قهوة، مزاج، وأيام أفضل. اطلب مسبقاً واستلم طلبك بسهولة.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#home"><span>CITY</span> CAFFEINE</a>
+    <nav>
+      <a href="#menu">المنيو</a>
+      <a href="#about">عنّا</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+    <a class="nav-order" href="#menu">اطلب الآن</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CITY CAFFEINE</p>
+        <h1>Good Coffee.<br><span>Better Days.</span></h1>
+        <p class="lead">قهوتك المفضلة، بطريقتنا. اطلب مسبقاً واستلمها جاهزة.</p>
+        <div class="actions">
+          <a class="btn primary" href="#menu">شوف المنيو</a>
+          <a class="btn ghost" id="heroWhatsapp" target="_blank" rel="noopener">اطلب عبر واتساب</a>
+        </div>
+        <div class="trust"><span>☕ قهوة طازجة</span><span>⚡ طلب مسبق</span><span>❤️ مزاج أحسن</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="glow"></div>
+        <img src="assets/city-caffeine-brand.png" alt="CITY CAFFEINE">
+      </div>
+    </section>
+
+    <section id="menu" class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">OUR MENU</p>
+          <h2>اختار مزاجك ☕</h2>
+        </div>
+        <div id="filters" class="filters"></div>
+      </div>
+      <div id="products" class="products"></div>
+    </section>
+
+    <section id="about" class="story">
+      <div>
+        <p class="eyebrow">THE CITY SPIRIT</p>
+        <h2>مش بس قهوة.<br><span>هي لحظة.</span></h2>
+      </div>
+      <p>في CITY CAFFEINE بنؤمن إن فنجان القهوة الصح ممكن يغيّر بداية يومك. اختار، اطلب مسبقاً، وتعال خذ قهوتك جاهزة.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <div>
+        <p class="eyebrow">FIND US</p>
+        <h2>مرّ علينا 👋</h2>
+        <p id="address"></p>
+        <p id="hours"></p>
+      </div>
+      <div class="socials">
+        <a id="instagram" target="_blank" rel="noopener">Instagram</a>
+        <a id="facebook" target="_blank" rel="noopener">Facebook</a>
+        <a id="contactWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> CITY CAFFEINE — Good Coffee. Better Days.</footer>
+
+  <div id="cartBar" class="cart-bar hidden">
+    <div><b id="cartCount">0</b> منتجات · <b id="cartTotal">0.00 د.أ</b></div>
+    <button class="btn primary" id="checkoutBtn">إتمام الطلب</button>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close" id="closeModal">×</button>
+      <p class="eyebrow">PRE-ORDER</p>
+      <h2>جهّز طلبك</h2>
+      <div id="cartItems"></div>
+      <label>اسمك<input id="customerName" placeholder="مثلاً: محمد"></label>
+      <label>وقت الاستلام<input id="pickupTime" placeholder="مثلاً: 6:30 مساءً"></label>
+      <label>ملاحظات<textarea id="notes" placeholder="بدون سكر، حليب إضافي..."></textarea></label>
+      <button class="btn primary full" id="sendOrder">إرسال الطلب عبر واتساب</button>
+      <small>سيتم فتح واتساب برسالة جاهزة بالطلب.</small>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
