@@ -1,302 +1,283 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قهوة محمد التميمي - City Caffeine</title>
-    
-    <!-- Open Graph Tags لمعاينة الرابط مع صورتك الفخمة -->
-    <meta property="og:title" content="قهوة محمد التميمي | Good Coffee. Better Days">
-    <meta property="og:description" content="مع محمد تميمي نرحب بكم. اطلب قهوتك المفضلة، الكيك، والمقرمشات واستلم طلبك بكل سهولة.">
-    <meta property="og:image" content="https://nguhhvjvgihv-pixel.github.io/city-caffeine/file_000000004918820a94b8b158891e1d84.png">
-    <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="style.css">
-    
-
-
-
-</head>
-<style>
-  /* عزل الخلفية تماماً وجعل كل العناصر شفافة لتظهر صورتك بوضوح خارق */
-  html, body, .hero, .menu-section, section, div, header, footer {
-    background-color: transparent !important;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Caffeine | كافيه محمد التميمي</title>
   
-  body {
-    background: #000 !important;
-    font-family: 'Tahoma', sans-serif;
-    color: #fff !important;
-    overflow-x: hidden;
-  }
+  <!-- Open Graph / Meta for Social Media -->
+  <meta property="og:title" content="City Caffeine | مع محمد تميمي">
+  <meta property="og:description" content="قهوة، مزاج، وأيام أفضل. اطلب مسبقاً واستلم طلبك بسهولة.">
+  <meta property="og:image" content="file_000000004918820a94b8b158891e1d84.png">
 
-  /* الخلفية الثابتة والواضحة مع غباش خفييييف جداً وزاهية للآخر */
-  body::before {
-    content: "" !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background-image: url('file_000000004918820a94b8b158891e1d84.png') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    filter: blur(2px) brightness(0.75) contrast(1.15) !important; /* غباش خفيف جداً 2 بكسل وإضاءة عالية لتبرز جمال الألوان */
-    z-index: -999999 !important;
-  }
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom 7-Star Luxe Styling -->
+  <style>
+    /* عزل الخلفية بالكامل لتظهر صورتك بوضوح خارق ونقاء تام */
+    html, body, .hero, .menu-section, section, div, header, footer {
+      background-color: transparent !important;
+    }
+    
+    body {
+      background: #000 !important;
+      font-family: 'Tahoma', sans-serif;
+      color: #fff !important;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* بطاقات المنيو بنظام زجاجي فخم وشفاف لتبقي الصورة واضحة من خلفها */
-  .menu-card {
-    background: rgba(10, 10, 10, 0.65) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    border: 1px solid rgba(212, 175, 55, 0.4) !important;
-    border-radius: 20px !important;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8) !important;
-    transition: all 0.3s ease;
-  }
+    /* الخلفية الثابتة والملكية مع غباش خفيييف جداً وزاهية للآخر */
+    body::before {
+      content: "" !important;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      background-image: url('file_000000004918820a94b8b158891e1d84.png') !important;
+      background-size: cover !important;
+      background-position: center !important;
+      filter: blur(2px) brightness(0.75) contrast(1.15) !important;
+      z-index: -999999 !important;
+    }
 
-  .menu-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(212, 175, 55, 0.9) !important;
-    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.3) !important;
-  }
+    /* تصميم حاوية الموقع العامة */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-  .menu-card img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-  }
+    /* قسم الـ Hero الفخم */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-  /* لمسات جمالية واضحة وبارزة لكل العناوين والأزرار */
-  .section-title, .hero-title {
-    text-shadow: 0 3px 15px rgba(0,0,0,0.9);
-  }
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.9);
+      margin-bottom: 15px;
+    }
 
-  .price {
-    color: #ffc107 !important;
-    font-weight: 900;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-  }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #ddd;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      margin-bottom: 30px;
+    }
 
-  .order-btn, .btn-primary, .btn-secondary {
-    background: linear-gradient(135deg, #d4af37, #996515) !important;
-    color: #fff !important;
-    border-radius: 12px !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    font-weight: bold;
-    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
-  }
-<script>
+    /* بطاقات المنيو بنظام الجلاس مورفيزم الفاخر جداً والشفاف */
+    .menu-section {
+      padding: 40px 0;
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffc107;
+      border-bottom: 2px solid rgba(212, 175, 55, 0.4);
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .menu-card {
+      background: rgba(10, 10, 10, 0.7) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border: 1px solid rgba(212, 175, 55, 0.4) !important;
+      border-radius: 20px !important;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8) !important;
+      transition: all 0.3s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 175, 55, 0.9) !important;
+      box-shadow: 0 20px 45px rgba(212, 175, 55, 0.35) !important;
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-info {
+      padding: 20px;
+    }
+
+    .menu-info h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.25rem;
+      color: #fff;
+    }
+
+    .menu-info p {
+      color: #ccc;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .menu-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .price {
+      color: #ffc107 !important;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+
+    /* الأزرار الاستثنائية الملكية */
+    .order-btn, .btn-primary, .btn-secondary {
+      background: linear-gradient(135deg, #d4af37, #996515) !important;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 12px !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .order-btn:hover, .btn-primary:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #e5c158, #b8860b) !important;
+    }
+
+    /* التذييل (Footer) */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #aaa;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 50px;
+    }
+  </style>
+</head>
 <body>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-container">
-      <div class="hero-content">
-        <p class="hero-subtitle">CITY CAFFEINE</p>
-        
-        <div class="welcome-badge">
-          <span>☕ مع محمد تميمي نرحب بكم، حيث المزاج الراقي والأيام الأفضل</span>
-        </div>
-
-        <h1 class="hero-title">
-          <span class="text-white">.Good Coffee</span><br>
-          <span class="text-accent">.Better Days</span>
-        </h1>
-        <p class="hero-description">قهوة، مزاج، وأيام أفضل. اطلب مسبقاً واستلم طلبك بسهولة لتستمتع بكل لحظة من يومك.</p>
-        
-        <div class="hero-btns">
-          <a href="#menu" class="btn btn-primary">شوف المنيو</a>
-          <a id="herowhatsapp" href="https://wa.me/yourphone" target="_blank" rel="noopener" class="btn btn-secondary">اطلب عبر واتساب</a>
-        </div>
+  <div class="container">
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="brand-badge" style="background: rgba(212,175,55,0.2); border: 1px solid #d4af37; padding: 6px 16px; border-radius: 30px; display: inline-block; margin-bottom: 15px; color: #ffc107; font-weight: bold;">
+        CITY CAFFEINE
       </div>
-    </div>
-  </section>
-
-  <!-- Menu Section -->
-  <section id="menu" class="menu-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">منيو القهوة والحلويات والمقرمشات</h2>
-        <p class="section-subtitle">تشكيلة ممتازة من المشروبات، الكيك، البسكوت والشيبس لتعديل المزاج</p>
+      <h1 class="hero-title">مع محمد تميمي نرحب بكم، حيث المزاج الراقي والأيام الأفضل ☕</h1>
+      <p class="hero-subtitle">قهوة، مزاج، وأيام أفضل. اطلب مسبقاً واستلم طلبك بسهولة لتستمتع بكل لحظة من يومك.</p>
+      
+      <div class="hero-btns" style="margin-top: 20px;">
+        <a href="#menu" class="btn-primary">شوف المنيو الفخم</a>
       </div>
+    </header>
 
-      <!-- قسم القهوة والمشروبات -->
-      <div class="category-title">☕ قسم المشروبات والقهوة</div>
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+      <h2 class="category-title">☕ القائمة المميزة</h2>
+      
       <div class="menu-grid">
+        <!-- كارد 1 -->
         <div class="menu-card">
           <div class="menu-img">
-            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=500&auto=format&fit=crop" alt="Espresso">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd" alt="قهوة">
           </div>
           <div class="menu-info">
-            <h3>إسبريسو (Espresso)</h3>
-            <p>جرعة إسبريسو غنية وقوية محضرة بعناية فائقة.</p>
+            <h3>إسبريسو ملكي</h3>
+            <p>قهوة مركزة بخلطة خاصة ومحمصة بعناية فائقة لتنعش يومك.</p>
             <div class="menu-footer">
-              <span class="price">2.00 د.أ</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب إسبريسو" class="order-btn" target="_blank">اطلب الآن</a>
+              <span class="price">1.50 أ.د</span>
+              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب إسبريسو ملكي" class="order-btn" target="_blank">اطلب واتساب</a>
             </div>
           </div>
         </div>
 
+        <!-- كارد 2 -->
         <div class="menu-card">
           <div class="menu-img">
-            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?q=80&w=500&auto=format&fit=crop" alt="Cappuccino">
+            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213" alt="كابتشينو">
           </div>
           <div class="menu-info">
-            <h3>كابتشينو (Cappuccino)</h3>
-            <p>إسبريسو مركز مع حليب مخمور ورغوة مخملية ناعمة.</p>
+            <h3>كابتشينو فاخر</h3>
+            <p>مزيج ساحر من الإسبريسو الغني والحليب المخفوق بنعومة.</p>
             <div class="menu-footer">
-              <span class="price">3.00 د.أ</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب كابتشينو" class="order-btn" target="_blank">اطلب الآن</a>
+              <span class="price">2.00 أ.د</span>
+              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب كابتشينو فاخر" class="order-btn" target="_blank">اطلب واتساب</a>
             </div>
           </div>
         </div>
 
+        <!-- كارد 3 -->
         <div class="menu-card">
           <div class="menu-img">
-            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=500&auto=format&fit=crop" alt="Iced Latte">
-          </div>
-          <div class="menu-info">
-            <h3>آيس لاتيه (Iced Latte)</h3>
-            <p>انتعش مع القهوة الباردة المميزة بالحليب والثلج.</p>
-            <div class="menu-footer">
-              <span class="price">3.50 د.أ</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب آيس لاتيه" class="order-btn" target="_blank">اطلب الآن</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- قسم الكيك والحلويات -->
-      <div class="category-title" style="margin-top: 4rem;">🍰 الكيك والحلويات الطازجة</div>
-      <div class="menu-grid">
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=500&auto=format&fit=crop" alt="Chocolate Cake">
-          </div>
-          <div class="menu-info">
-            <h3>كيكة الشوكولاتة الغنية</h3>
-            <p>طبقات فاخرة من الشوكولاتة البلجيكية الذائبة في الفم.</p>
-            <div class="menu-footer">
-              <span class="price">3.00 د.أ</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب كيكة الشوكولاتة" class="order-btn" target="_blank">اطلب الآن</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=500&auto=format&fit=crop" alt="Cheesecake">
-          </div>
-          <div class="menu-info">
-            <h3>تشيز كيك التوت</h3>
-            <p>تشيز كيك كريمي ناعم مغطى بصوص التوت البري المنعش.</p>
-            <div class="menu-footer">
-              <span class="price">3.50 د.أ</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب تشيز كيك التوت" class="order-btn" target="_blank">اطلب الآن</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=500&auto=format&fit=crop" alt="Cookies">
-          </div>
-          <div class="menu-info">
-            <h3>كوكيز شوكليت جيب</h3>
-            <p>حبة كوكيز طازجة ودافئة محشية بقطع الشوكولاتة الكرانشي.</p>
-            <div class="menu-footer">
-              <span class="price">1.75 د.أ</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب كوكيز" class="order-btn" target="_blank">اطلب الآن</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- قسم البسكوت والشيبس والمقرمشات -->
-      <div class="category-title" style="margin-top: 4rem;">🥨 البسكوت، الشيبس والمقرمشات</div>
-      <div class="menu-grid">
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=500&auto=format&fit=crop" alt="Chips">
-          </div>
-          <div class="menu-info">
-            <h3>شيبس مقرمش (تنوع نكهات)</h3>
-            <p>تشكيلة مختارة من ألذ أنواع الشيبس والمقرمشات المالحة.</p>
-            <div class="menu-footer">
-              <span class="price">0.75 د.أ</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب شيبس مقرمش" class="order-btn" target="_blank">اطلب الآن</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=500&auto=format&fit=crop" alt="Biscuits">
-          </div>
-          <div class="menu-info">
-            <h3>بسكوت بالزبدة الفاخر</h3>
-            <p>بسكوت مقرمش وخفيف يذوب مع كل رشفة قهوة.</p>
-            <div class="menu-footer">
-              <span class="price">1.25 د.أ</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب بسكوت بالزبدة" class="order-btn" target="_blank">اطلب الآن</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu-card">
-          <div class="menu-img">
-            <!-- تم تعديل رابط البسة إلى صورة مكسرات مشكلة محمصة فخمة -->
-            <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=500&auto=format&fit=crop" alt="Nuts">
+            <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b49" alt="مكسرات">
           </div>
           <div class="menu-info">
             <h3>مكسرات مشكلة محمصة</h3>
             <p>مكسرات فاخرة ممتازة ومقرمشة لترافق سهرتك أو قهوتك.</p>
             <div class="menu-footer">
-              <span class="price">2.00 د.أ</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب مكسرات مشكلة" class="order-btn" target="_blank">اطلب الآن</a>
+              <span class="price">2.00 أ.د</span>
+              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب مكسرات مشكلة" class="order-btn" target="_blank">اطلب واتساب</a>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer>
+      <p>قهوة محمد التميمي &copy; 2026 جميع الحقوق محفوظة</p>
+    </footer>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>جميع الحقوق محفوظة &copy; 2026 قهوة محمد التميمي</p>
-  </footer>
-<script>
-  // تأثير اللمس الفخم (موجة ضوئية عند الضغط على الشاشة)
-  document.addEventListener('click', function (e) {
-    let circle = document.createElement('div');
-    circle.style.position = 'fixed';
-    circle.style.width = '30px';
-    circle.style.height = '30px';
-    circle.style.borderRadius = '50%';
-    circle.style.background = 'rgba(212, 175, 55, 0.6)';
-    circle.style.left = (e.clientX - 15) + 'px';
-    circle.style.top = (e.clientY - 15) + 'px';
-    circle.style.pointerEvents = 'none';
-    circle.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-    circle.style.transform = 'scale(0)';
-    circle.style.zIndex = '999999';
-    document.body.appendChild(circle);
-    
-    setTimeout(() => {
-      circle.style.transform = 'scale(3)';
-      circle.style.opacity = '0';
-    }, 10);
+  <!-- JavaScript تأثير اللمس الذهبي الفخم -->
+  <script>
+    document.addEventListener('click', function (e) {
+      let circle = document.createElement('div');
+      circle.style.position = 'fixed';
+      circle.style.width = '35px';
+      circle.style.height = '35px';
+      circle.style.borderRadius = '50%';
+      circle.style.background = 'radial-gradient(circle, rgba(255,215,0,0.8) 0%, rgba(212,175,55,0.3) 70%, transparent 100%)';
+      circle.style.left = (e.clientX - 17) + 'px';
+      circle.style.top = (e.clientY - 17) + 'px';
+      circle.style.pointerEvents = 'none';
+      circle.style.transition = 'transform 0.4s ease-out, opacity 0.4s ease-out';
+      circle.style.transform = 'scale(0.2)';
+      circle.style.zIndex = '2147483647';
+      document.body.appendChild(circle);
+      
+      setTimeout(() => {
+        circle.style.transform = 'scale(3.5)';
+        circle.style.opacity = '0';
+      }, 10);
 
-    setTimeout(() => {
-      circle.remove();
-    }, 500);
-  });
-</script>
+      setTimeout(() => {
+        circle.remove();
+      }, 400);
+    }, {passive: true});
+  </script>
+
 </body>
-    </html>
-
+</html>
