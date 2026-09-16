@@ -89,6 +89,33 @@
     box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
   }
 </style>
+    <script>
+  // تأثير اللمس الفخم (موجة ضوئية عند الضغط على الشاشة أو الأزرار)
+  document.addEventListener('click', function (e) {
+    let circle = document.createElement('div');
+    circle.style.position = 'fixed';
+    circle.style.width = '30px';
+    circle.style.height = '30px';
+    circle.style.borderRadius = '50%';
+    circle.style.background = 'rgba(212, 175, 55, 0.6)';
+    circle.style.left = (e.clientX - 15) + 'px';
+    circle.style.top = (e.clientY - 15) + 'px';
+    circle.style.pointerEvents = 'none';
+    circle.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+    circle.style.transform = 'scale(0)';
+    circle.style.zIndex = '999999';
+    document.body.appendChild(circle);
+    
+    setTimeout(() => {
+      circle.style.transform = 'scale(3)';
+      circle.style.opacity = '0';
+    }, 10);
+
+    setTimeout(() => {
+      circle.remove();
+    }, 500);
+  });
+    </script>
 <body>
 
   <!-- Hero Section -->
