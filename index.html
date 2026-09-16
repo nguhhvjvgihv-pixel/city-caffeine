@@ -19,7 +19,7 @@
 </head>
 <style>
   html, body {
-    background-color: transparent !important;
+    background-color: #121212 !important;
   }
   body::before {
     content: "" !important;
@@ -31,11 +31,18 @@
     background-image: url('file_000000004918820a94b8b158891e1d84.png') !important;
     background-size: cover !important;
     background-position: center !important;
-    filter: blur(6px) brightness(0.4) !important;
+    /* أزلنا التغبيش تماماً، ورفعنا الإضاءة شوي لتكون الألوان واضحة وجميلة جداً */
+    filter: brightness(0.65) !important; 
     z-index: -99999 !important;
   }
-  .hero {
+  .hero, .menu-section {
     background: transparent !important;
+  }
+  /* خلفية شفافة ومرتبة لبطاقات المنيو عشان تظل الصورة مبينة وراها بشكل فخم */
+  .menu-card {
+    background: rgba(18, 18, 18, 0.75) !important;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 </style>
 <body>
