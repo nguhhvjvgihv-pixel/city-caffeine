@@ -4,24 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>City Caffeine | كافيه محمد التميمي</title>
-  
-  <!-- Open Graph / Meta for Social Media -->
-  <meta property="og:title" content="City Caffeine | مع محمد تميمي">
-  <meta property="og:description" content="قهوة، مزاج، وأيام أفضل. اطلب مسبقاً واستلم طلبك بسهولة.">
-  <meta property="og:image" content="file_000000004918820a94b8b158891e1d84.png">
-
-  <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Custom 7-Star Luxe Styling -->
   <style>
-    /* عزل الخلفية بالكامل لتظهر صورتك بوضوح خارق ونقاء تام */
+    /* عزل تام لكل العناصر لتظهر صورتك الخلفية بوضوح خارق وبدون شوائب */
     html, body, .hero, .menu-section, section, div, header, footer {
       background-color: transparent !important;
     }
     
     body {
-      background: #000 !important;
+      background: #050505 !important;
       font-family: 'Tahoma', sans-serif;
       color: #fff !important;
       overflow-x: hidden;
@@ -29,7 +21,7 @@
       padding: 0;
     }
 
-    /* الخلفية الثابتة والملكية مع غباش خفيييف جداً وزاهية للآخر */
+    /* الخلفية الملكية الثابتة والواضحة مع الغباش الخفيف جداً والمخملي */
     body::before {
       content: "" !important;
       position: fixed !important;
@@ -44,21 +36,19 @@
       z-index: -999999 !important;
     }
 
-    /* تصميم حاوية الموقع العامة */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
 
-    /* قسم الـ Hero الفخم */
     .hero {
       text-align: center;
-      padding: 60px 20px;
+      padding: 50px 20px;
     }
 
     .hero-title {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       font-weight: 900;
       color: #fff;
       text-shadow: 0 4px 20px rgba(0,0,0,0.9);
@@ -69,12 +59,11 @@
       font-size: 1.1rem;
       color: #ddd;
       text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
-    /* بطاقات المنيو بنظام الجلاس مورفيزم الفاخر جداً والشفاف */
     .menu-section {
-      padding: 40px 0;
+      padding: 30px 0;
     }
 
     .category-title {
@@ -83,7 +72,7 @@
       color: #ffc107;
       border-bottom: 2px solid rgba(212, 175, 55, 0.4);
       padding-bottom: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
@@ -93,6 +82,7 @@
       gap: 25px;
     }
 
+    /* تصميم بطاقات المنيو الزجاجية الفخمة */
     .menu-card {
       background: rgba(10, 10, 10, 0.7) !important;
       backdrop-filter: blur(12px) !important;
@@ -147,8 +137,8 @@
       text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     }
 
-    /* الأزرار الاستثنائية الملكية */
-    .order-btn, .btn-primary, .btn-secondary {
+    /* أزرار ملكية فخمة */
+    .order-btn, .btn-primary {
       background: linear-gradient(135deg, #d4af37, #996515) !important;
       color: #fff !important;
       padding: 10px 20px;
@@ -166,7 +156,6 @@
       background: linear-gradient(135deg, #e5c158, #b8860b) !important;
     }
 
-    /* التذييل (Footer) */
     footer {
       text-align: center;
       padding: 30px;
@@ -182,14 +171,15 @@
   <div class="container">
     <!-- Hero Section -->
     <header class="hero">
-      <div class="brand-badge" style="background: rgba(212,175,55,0.2); border: 1px solid #d4af37; padding: 6px 16px; border-radius: 30px; display: inline-block; margin-bottom: 15px; color: #ffc107; font-weight: bold;">
+      <div style="background: rgba(212,175,55,0.2); border: 1px solid #d4af37; padding: 6px 16px; border-radius: 30px; display: inline-block; margin-bottom: 15px; color: #ffc107; font-weight: bold;">
         CITY CAFFEINE
       </div>
       <h1 class="hero-title">مع محمد تميمي نرحب بكم، حيث المزاج الراقي والأيام الأفضل ☕</h1>
       <p class="hero-subtitle">قهوة، مزاج، وأيام أفضل. اطلب مسبقاً واستلم طلبك بسهولة لتستمتع بكل لحظة من يومك.</p>
       
-      <div class="hero-btns" style="margin-top: 20px;">
+      <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
         <a href="#menu" class="btn-primary">شوف المنيو الفخم</a>
+        <a href="https://wa.me/yourphone" class="order-btn" target="_blank">اطلب واتساب</a>
       </div>
     </header>
 
@@ -208,7 +198,7 @@
             <p>قهوة مركزة بخلطة خاصة ومحمصة بعناية فائقة لتنعش يومك.</p>
             <div class="menu-footer">
               <span class="price">1.50 أ.د</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب إسبريسو ملكي" class="order-btn" target="_blank">اطلب واتساب</a>
+              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب إسبريسو ملكي" class="order-btn" target="_blank">اطلب</a>
             </div>
           </div>
         </div>
@@ -223,7 +213,7 @@
             <p>مزيج ساحر من الإسبريسو الغني والحليب المخفوق بنعومة.</p>
             <div class="menu-footer">
               <span class="price">2.00 أ.د</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب كابتشينو فاخر" class="order-btn" target="_blank">اطلب واتساب</a>
+              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب كابتشينو فاخر" class="order-btn" target="_blank">اطلب</a>
             </div>
           </div>
         </div>
@@ -238,7 +228,7 @@
             <p>مكسرات فاخرة ممتازة ومقرمشة لترافق سهرتك أو قهوتك.</p>
             <div class="menu-footer">
               <span class="price">2.00 أ.د</span>
-              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب مكسرات مشكلة" class="order-btn" target="_blank">اطلب واتساب</a>
+              <a href="https://wa.me/yourphone?text=مرحباً، أود طلب مكسرات مشكلة" class="order-btn" target="_blank">اطلب</a>
             </div>
           </div>
         </div>
@@ -251,7 +241,7 @@
     </footer>
   </div>
 
-  <!-- JavaScript تأثير اللمس الذهبي الفخم -->
+  <!-- تأثير اللمس الذهبي الفخم في المكان النظامي الآمن -->
   <script>
     document.addEventListener('click', function (e) {
       let circle = document.createElement('div');
