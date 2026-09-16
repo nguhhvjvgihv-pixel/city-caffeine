@@ -6,20 +6,321 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
 :root{--g:#e9b86d;--bg:#090706;--card:#1c120cdd;--muted:#cbb79d}*{box-sizing:border-box;scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#fff4e3;font-family:Cairo,sans-serif}body:before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(90deg,#080504ed,#0805049e,#080504ed),url('file_000000004918820a94b8b158891e1d84.png') center/cover;filter:blur(5px);transform:scale(1.05)}body:after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,transparent,#090706)}.wrap{width:min(1150px,92%);margin:auto}.nav{position:sticky;top:0;z-index:5;background:#090706d9;backdrop-filter:blur(18px);border-bottom:1px solid #e9b86d44}.navin{min-height:75px;display:flex;justify-content:space-between;align-items:center;gap:15px}.logo{font-weight:800;letter-spacing:1px}.logo small{display:block;color:var(--g);font-size:10px;letter-spacing:3px}.links{display:flex;gap:22px;font-size:14px}.links a:hover{color:var(--g)}a{color:inherit;text-decoration:none}.btn{display:inline-block;padding:12px 20px;border-radius:999px;border:1px solid var(--g);font-weight:800;transition:.25s}.primary{background:linear-gradient(135deg,#f4ce8c,#b87932);color:#1b1008}.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px #0006}.hero{min-height:88vh;display:grid;align-items:center;padding:70px 0}.heroGrid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.eyebrow{color:var(--g);font-size:12px;letter-spacing:3px;font-weight:800}h1{font:700 clamp(48px,7vw,90px)/1.1 'Playfair Display',serif;margin:20px 0}h1 span,h2 span{color:var(--g)}p{color:var(--muted);line-height:2}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.heroCard{min-height:420px;border:1px solid #e9b86d55;border-radius:30px;overflow:hidden;position:relative;display:flex;align-items:end;padding:28px;background:#0005;box-shadow:0 20px 70px #0007}.heroCard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6}.heroCard div{position:relative}.heroCard h3{font-size:32px;color:var(--g);margin:0}.section{padding:85px 0}.head{margin-bottom:28px}.head h2{font-size:clamp(28px,4vw,48px);margin:8px 0}.line{height:3px;width:80px;background:linear-gradient(90deg,var(--g),transparent)}.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}.filter{background:#ffffff08;color:#fff0db;border:1px solid #e9b86d44;padding:10px 18px;border-radius:999px;font-family:inherit;cursor:pointer}.filter.active,.filter:hover{background:var(--g);color:#1b1008}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--card);border:1px solid #e9b86d35;border-radius:22px;overflow:hidden;transition:.3s}.card:hover{transform:translateY(-7px);border-color:var(--g)}.card img{width:100%;height:205px;object-fit:cover;display:block}.body{padding:18px}.body h3{margin:0 0 8px}.body p{font-size:13px;min-height:48px}.bottom{display:flex;justify-content:space-between;align-items:center}.price{color:var(--g);font-size:19px;font-weight:800}.add{border:1px solid var(--g);background:#e9b86d18;color:var(--g);padding:8px 12px;border-radius:10px;cursor:pointer;font-family:inherit}.about{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.about img{width:100%;height:390px;object-fit:cover;border-radius:28px;border:1px solid #e9b86d44}.contact{padding:32px;border:1px solid #e9b86d44;border-radius:28px;display:flex;justify-content:space-between;align-items:center;gap:20px;background:#ffffff05}.wa{position:fixed;bottom:22px;left:22px;background:#25d366;color:white;border-radius:50%;width:58px;height:58px;display:grid;place-items:center;font-size:24px;z-index:10}footer{padding:30px 0;border-top:1px solid #e9b86d33;color:#bca78e;font-size:12px}@media(max-width:850px){.heroGrid,.about{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.links{display:none}.contact{display:block}}@media(max-width:550px){.grid{grid-template-columns:1fr}.hero{padding:45px 0}.heroCard{min-height:300px}.contact .actions .btn{width:100%;text-align:center}}
+
+/* ===== CITY CAFFEINE PREMIUM FEATURES ===== */
+body{overflow-x:hidden}
+.glow-orb{position:fixed;width:260px;height:260px;border-radius:50%;background:#e9b86d18;filter:blur(65px);pointer-events:none;z-index:-1;animation:floatOrb 12s ease-in-out infinite}
+.glow-orb.one{top:12%;left:-100px}.glow-orb.two{bottom:8%;right:-120px;animation-delay:-5s}
+@keyframes floatOrb{50%{transform:translate(70px,-40px) scale(1.15)}}
+.mood-box{margin-top:28px;padding:22px;border:1px solid #e9b86d44;border-radius:24px;background:#120b08b8;backdrop-filter:blur(12px)}
+.mood-buttons{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.mood-btn{border:1px solid #e9b86d55;background:#ffffff08;color:#fff0db;border-radius:999px;padding:9px 13px;font-family:inherit;cursor:pointer;transition:.25s}
+.mood-btn:hover,.mood-btn.selected{background:var(--g);color:#1b1008;transform:translateY(-2px)}
+.mood-result{color:var(--g);font-weight:700;margin-top:14px;min-height:28px}
+.cart-panel{position:fixed;top:0;right:-410px;width:min(390px,92vw);height:100vh;background:#130c08f7;border-left:1px solid #e9b86d55;z-index:30;padding:24px;transition:right .35s;box-shadow:-20px 0 70px #0008;overflow:auto}
+.cart-panel.open{right:0}
+.cart-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.close-cart{background:none;border:1px solid #e9b86d55;color:#fff;border-radius:10px;padding:5px 10px;cursor:pointer}
+.cart-item{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #e9b86d22}
+.cart-item small{color:var(--muted)}
+.cart-total{display:flex;justify-content:space-between;margin:22px 0;color:var(--g);font-size:20px;font-weight:800}
+.cart-button{position:fixed;bottom:22px;right:22px;z-index:20;background:linear-gradient(135deg,#f4ce8c,#b87932);color:#1b1008;border:0;border-radius:999px;padding:13px 18px;font-family:inherit;font-weight:800;cursor:pointer;box-shadow:0 10px 30px #0007}
+.reward-box{margin-top:22px;padding:20px;border:1px solid #e9b86d44;border-radius:22px;background:linear-gradient(135deg,#e9b86d12,#ffffff04)}
+.progress{height:10px;background:#ffffff12;border-radius:999px;overflow:hidden;margin:12px 0}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#b87932,#f4ce8c);transition:width .4s}
+.toast{position:fixed;bottom:95px;left:50%;transform:translateX(-50%) translateY(20px);opacity:0;background:#f4ce8c;color:#1b1008;padding:11px 18px;border-radius:999px;font-weight:800;z-index:40;transition:.3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:550px){.cart-button{bottom:90px;right:15px}.mood-box{padding:16px}}
+
+
+/* ===== MOBILE-FIRST LUXURY EXPERIENCE ===== */
+html{scroll-padding-top:78px}
+body{background:radial-gradient(circle at 50% 0%,#24150b 0,#090706 38%,#050403 100%);-webkit-tap-highlight-color:transparent}
+body:before{opacity:.34}
+.nav{background:rgba(7,5,4,.82);box-shadow:0 8px 35px rgba(0,0,0,.28)}
+.navin{min-height:70px}
+.logo{font-size:15px}
+.hero{min-height:auto;padding:42px 0 55px}
+.heroGrid{grid-template-columns:1fr 1fr;gap:26px}
+.heroGrid>div:first-child{position:relative;z-index:2}
+.heroCard{box-shadow:0 25px 90px rgba(0,0,0,.55),inset 0 0 45px rgba(233,184,109,.08)}
+.section{padding:58px 0}
+.card{position:relative;box-shadow:0 12px 35px rgba(0,0,0,.28);transform:translateZ(0)}
+.card:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.08),transparent 35%,transparent 70%,rgba(233,184,109,.07));opacity:.7}
+.add{min-height:42px;min-width:82px;font-size:14px}
+.filter{min-height:42px}
+.touch-spot{position:fixed;left:0;top:0;width:120px;height:120px;border-radius:50%;pointer-events:none;z-index:100;background:radial-gradient(circle,rgba(244,206,140,.24) 0,rgba(244,206,140,.10) 28%,transparent 68%);transform:translate(-50%,-50%) scale(.25);opacity:0;filter:blur(.2px)}
+.touch-spot.show{animation:touchGlow .65s ease-out}
+@keyframes touchGlow{0%{opacity:.9;transform:translate(-50%,-50%) scale(.25)}55%{opacity:.55}100%{opacity:0;transform:translate(-50%,-50%) scale(1.35)}}
+.ripple{position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,239,202,.35);transform:scale(0);animation:ripple .55s ease-out;z-index:3}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+.mobile-bar{display:none}
+.cart-button{transition:transform .2s,box-shadow .2s}
+.cart-button:active,.btn:active,.add:active,.filter:active{transform:scale(.96)}
+@media(max-width:850px){
+ .wrap{width:min(100% - 30px,700px)}
+ .heroGrid{grid-template-columns:1fr}
+ .heroGrid>div:first-child{order:1;text-align:center}
+ .heroCard{order:0;min-height:390px;max-width:520px;width:100%;margin:auto}
+ .eyebrow{font-size:10px;letter-spacing:2.2px}
+ h1{font-size:clamp(42px,12vw,68px);line-height:1.05}
+ .actions{justify-content:center}
+ .actions .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+ .links{display:none}
+ .navin>.btn{display:none}
+ .grid{grid-template-columns:repeat(2,1fr);gap:13px}
+ .card{border-radius:18px}
+ .card img{height:180px}
+ .body{padding:14px}
+ .body h3{font-size:16px}
+ .body p{font-size:12px;line-height:1.7;min-height:41px}
+ .about{grid-template-columns:1fr}
+ .about img{height:260px}
+ .contact{display:block;text-align:center;padding:24px}
+ .contact .actions{display:grid;grid-template-columns:1fr 1fr}
+ .contact .actions .btn{width:100%}
+ .mobile-bar{position:fixed;display:grid;grid-template-columns:repeat(4,1fr);bottom:0;left:0;right:0;height:68px;background:rgba(9,7,6,.94);backdrop-filter:blur(18px);border-top:1px solid #e9b86d55;z-index:25;padding:7px 8px calc(7px + env(safe-area-inset-bottom));box-shadow:0 -12px 35px rgba(0,0,0,.45)}
+ .mobile-bar a,.mobile-bar button{font:700 10px Cairo,sans-serif;color:#d8c2a4;background:none;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:14px}
+ .mobile-bar strong{font-size:19px;line-height:1;color:#f4ce8c}
+ .mobile-bar .active{background:#e9b86d12;color:#f4ce8c}
+ footer{padding-bottom:92px}
+ .cart-button{bottom:82px;right:13px;padding:12px 16px}
+ .wa{bottom:82px;left:13px;width:50px;height:50px}
+}
+@media(max-width:550px){
+ .hero{padding:24px 0 35px}
+ .heroCard{min-height:320px;border-radius:24px}
+ .heroCard h3{font-size:27px}
+ .section{padding:45px 0}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .card img{height:145px}
+ .body h3{font-size:14px}
+ .body p{font-size:11px}
+ .price{font-size:16px}
+ .add{min-width:70px;padding:7px 8px;font-size:12px}
+ .filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;scrollbar-width:none}
+ .filters::-webkit-scrollbar{display:none}
+ .filter{flex:0 0 auto;padding:9px 14px}
+ .mood-buttons{display:grid;grid-template-columns:1fr 1fr}
+ .mood-btn{min-height:44px}
+ .cart-panel{width:100%;right:-100%;border-left:0;border-radius:24px 24px 0 0;top:auto;bottom:-100%;height:min(78vh,680px);transition:bottom .35s,right .35s}
+ .cart-panel.open{right:0;bottom:0}
+ .cart-button{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
 </style></head>
-<body>
-<header class="nav"><div class="wrap navin"><a class="logo" href="#home">CITY CAFFEINE<small>COFFEE • MORE • GOOD VIBES</small></a><nav class="links"><a href="#home">الرئيسية</a><a href="#menu">المنيو</a><a href="#about">قصتنا</a><a href="#contact">تواصل</a></nav><a class="btn primary" href="#menu">اطلب الآن</a></div></header>
-<main id="home"><section class="hero"><div class="wrap heroGrid"><div><div class="eyebrow">PREMIUM COFFEE EXPERIENCE</div><h1>مزاجك يبدأ من <span>أول رشفة.</span></h1><p>قهوة فاخرة، تفاصيل أنيقة، وتجربة تستحق أن تتكرر كل يوم في CITY CAFFEINE[cite: 1].</p><div class="actions"><a class="btn primary" href="https://wa.me/9627XXXXXXXX" target="_blank">اطلب عبر واتساب ↗</a><a class="btn" href="#menu">استكشف المنيو ↓</a></div></div><div class="heroCard"><img src="file_000000004918820a94b8b158891e1d84.png" alt="شعار CITY CAFFEINE"><div><h3>Good Coffee.<br>Better Days.</h3><p>لحظات صغيرة، بطعم كبير.</p></div></div></div></section>
+<body><div class="glow-orb one"></div><div class="glow-orb two"></div>
+<header class="nav"><div class="wrap navin"><a class="logo" href="#home">CITY CAFFEINE<small>COFFEE • MORE • GOOD VIBES</small></a><nav class="links"><a href="#home">الرئيسية</a><a href="#menu">المنيو</a><a href="#about">قصتنا</a><a href="#contact">تواصل</a><a href="#rewards">المكافآت</a></nav><a class="btn primary" href="#menu">اطلب الآن</a></div></header>
+<main id="home"><section class="hero"><div class="wrap heroGrid"><div><div class="eyebrow">PREMIUM COFFEE EXPERIENCE</div><h1>مزاجك يبدأ من <span>أول رشفة.</span></h1><p>قهوة فاخرة، تفاصيل أنيقة، وتجربة تستحق أن تتكرر كل يوم في CITY CAFFEINE.</p><div class="actions"><a class="btn primary" href="https://wa.me/9627XXXXXXXX" target="_blank">اطلب عبر واتساب ↗</a><a class="btn" href="#menu">استكشف المنيو ↓</a></div></div><div class="heroCard"><img src="file_000000004918820a94b8b158891e1d84.png" alt="شعار CITY CAFFEINE"><div><h3>Good Coffee.<br>Better Days.</h3><p>لحظات صغيرة، بطعم كبير.</p></div></div></div></section>
 <section class="section" id="menu"><div class="wrap"><div class="head"><div class="eyebrow">OUR MENU</div><h2>اختار <span>مزاجك</span> اليوم</h2><div class="line"></div></div><div class="filters"><button class="filter active" data-f="all">الكل</button><button class="filter" data-f="coffee">قهوة</button><button class="filter" data-f="snack">بسكوت وسناكات</button><button class="filter" data-f="soft">مشروبات غازية</button></div><div class="grid" id="products">
-<article class="card" data-c="coffee"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85" alt="لاتيه"><div class="body"><h3>لاتيه كلاسيك</h3><p>إسبريسو متوازن مع حليب ناعم ورغوة حريرية[cite: 1].</p><div class="bottom"><b class="price">2.00 د.أ</b><button class="add">+ أضف</button></div></div></article>
-<article class="card" data-c="coffee"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85" alt="كابتشينو"><div class="body"><h3>كابتشينو</h3><p>قهوة قوية وحليب مخملي بتوازن مثالي[cite: 1].</p><div class="bottom"><b class="price">2.25 د.أ</b><button class="add">+ أضف</button></div></div></article>
-<article class="card" data-c="coffee"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85" alt="آيس كوفي"><div class="body"><h3>آيس كوفي</h3><p>انتعاش بارد مع نكهة قهوة واضحة[cite: 1].</p><div class="bottom"><b class="price">2.50 د.أ</b><button class="add">+ أضف</button></div></div></article>
-<article class="card" data-c="snack"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=900&q=85" alt="بسكوت"><div class="body"><h3>بسكوت شوكولاتة</h3><p>مقرمش ولذيذ مع كوب القهوة[cite: 1].</p><div class="bottom"><b class="price">0.75 د.أ</b><button class="add">+ أضف</button></div></div></article>
-<article class="card" data-c="snack"><img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=900&q=85" alt="بريك"><div class="body"><h3>بريك</h3><p>سناك خفيف لوقت الاستراحة[cite: 1].</p><div class="bottom"><b class="price">0.50 د.أ</b><button class="add">+ أضف</button></div></div></article>
-<article class="card" data-c="soft"><img src="https://images.unsplash.com/photo-1629203849820-fdd70d49c38e?auto=format&fit=crop&w=900&q=85" alt="مشروب غازي"><div class="body"><h3>مشروب غازي</h3><p>بارد ومنعش مع وجبتك أو قهوتك[cite: 1].</p><div class="bottom"><b class="price">0.60 د.أ</b><button class="add">+ أضف</button></div></div></article>
+<article class="card" data-c="coffee"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85" alt="لاتيه"><div class="body"><h3>لاتيه كلاسيك</h3><p>إسبريسو متوازن مع حليب ناعم ورغوة حريرية[cite: 2].</p><div class="bottom"><b class="price">2.00 د.أ</b><button class="add">+ أضف</button></div></div></article>
+<article class="card" data-c="coffee"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85" alt="كابتشينو"><div class="body"><h3>كابتشينو</h3><p>قهوة قوية وحليب مخملي بتوازن مثالي[cite: 2].</p><div class="bottom"><b class="price">2.25 د.أ</b><button class="add">+ أضف</button></div></div></article>
+<article class="card" data-c="coffee"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85" alt="آيس كوفي"><div class="body"><h3>آيس كوفي</h3><p>انتعاش بارد مع نكهة قهوة واضحة[cite: 2].</p><div class="bottom"><b class="price">2.50 د.أ</b><button class="add">+ أضف</button></div></div></article>
+<article class="card" data-c="snack"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=900&q=85" alt="بسكوت"><div class="body"><h3>بسكوت شوكولاتة</h3><p>مقرمش ولذيذ مع كوب القهوة[cite: 2].</p><div class="bottom"><b class="price">0.75 د.أ</b><button class="add">+ أضف</button></div></div></article>
+<article class="card" data-c="snack"><img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=900&q=85" alt="بريك"><div class="body"><h3>بريك</h3><p>سناك خفيف لوقت الاستراحة[cite: 2].</p><div class="bottom"><b class="price">0.50 د.أ</b><button class="add">+ أضف</button></div></div></article>
+<article class="card" data-c="soft"><img src="https://images.unsplash.com/photo-1629203849820-fdd70d49c38e?auto=format&fit=crop&w=900&q=85" alt="مشروب غازي"><div class="body"><h3>مشروب غازي</h3><p>بارد ومنعش مع وجبتك أو قهوتك[cite: 2].</p><div class="bottom"><b class="price">0.60 د.أ</b><button class="add">+ أضف</button></div></div></article>
 </div></div></section>
-<section class="section" id="about"><div class="wrap about"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=85" alt="أجواء كوفي شوب"><div><div class="eyebrow">OUR STORY</div><h2>القهوة ليست مشروباً، إنها <span>تجربة.</span></h2><div class="line"></div><p>نهتم بالمذاق والتقديم وكل تفصيلة حتى تكون زيارتك مختلفة، دافئة، وتستحق التكرار[cite: 1].</p></div></div></section>
-<section class="section" id="contact"><div class="wrap"><div class="contact"><div><div class="eyebrow">LET'S CONNECT</div><h2>جاهز تطلب قهوتك؟</h2><p>اطلب عبر واتساب وتابع عروضنا على إنستغرام[cite: 1].</p></div><div class="actions"><a class="btn primary" href="https://wa.me/9627XXXXXXXX" target="_blank">واتساب ↗</a><a class="btn" href="https://instagram.com/YOUR_INSTAGRAM" target="_blank">إنستغرام ↗</a></div></div></div></section></main>
-<footer><div class="wrap">© 2026 CITY CAFFEINE — All rights reserved[cite: 1].</div></footer><a class="wa" href="https://wa.me/9627XXXXXXXX" target="_blank">◉</a>
-<script>const fs=document.querySelectorAll('.filter'),cards=document.querySelectorAll('.card');fs.forEach(f=>f.onclick=()=>{fs.forEach(x=>x.classList.remove('active'));f.classList.add('active');cards.forEach(c=>c.style.display=f.dataset.f==='all'||c.dataset.f===c.dataset.c?'':'none')});document.querySelectorAll('.add').forEach(b=>b.onclick=()=>alert('تم اختيار المنتج. أكمل طلبك عبر واتساب ☕'));</script>
+<section class="section" id="about"><div class="wrap about"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=85" alt="أجواء كوفي شوب"><div><div class="eyebrow">OUR STORY</div><h2>القهوة ليست مشروباً، إنها <span>تجربة.</span></h2><div class="line"></div><p>نهتم بالمذاق والتقديم وكل تفصيلة حتى تكون زيارتك مختلفة، دافئة، وتستحق التكرار[cite: 2].</p></div></div></section>
+<section class="section" id="contact"><div class="wrap"><div class="contact"><div><div class="eyebrow">LET'S CONNECT</div><h2>جاهز تطلب قهوتك؟</h2><p>اطلب عبر واتساب وتابع عروضنا على إنستغرام[cite: 2].</p></div><div class="actions"><a class="btn primary" href="https://wa.me/9627XXXXXXXX" target="_blank">واتساب ↗</a><a class="btn" href="https://instagram.com/YOUR_INSTAGRAM" target="_blank">إنستغرام ↗</a></div></div></div></section></main>
+
+<section class="section" id="rewards">
+  <div class="wrap">
+    <div class="reward-box">
+      <div class="eyebrow">CITY REWARDS</div>
+      <h2>كل طلب يقرّبك من <span>مكافأتك ⭐</span></h2>
+      <p>اجمع نقاطاً تجريبية على هذا الجهاز. عند الوصول إلى 100 نقطة تحصل على مكافأة رمزية[cite: 2].</p>
+      <div class="progress"><span id="rewardProgress"></span></div>
+      <div id="rewardText">النقاط الحالية: 0 / 100</div>
+      <div class="actions">
+        <button class="btn primary" id="rewardAdd" type="button">أضف 10 نقاط</button>
+        <button class="btn" id="rewardReset" type="button">إعادة ضبط</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<button class="cart-button" id="openCart" type="button">🛒 السلة (<span id="cartCount">0</span>)</button>
+<aside class="cart-panel" id="cartPanel" aria-label="سلة الطلبات">
+  <div class="cart-head"><h2>سلة طلباتك</h2><button class="close-cart" id="closeCart" type="button">إغلاق ✕</button></div>
+  <p>راجع اختياراتك ثم أرسل الطلب عبر واتساب[cite: 2].</p>
+  <div id="cartItems"></div>
+  <div class="cart-total"><span>المجموع</span><span id="cartTotal">0.00 د.أ</span></div>
+  <button class="btn primary" id="sendCart" type="button" style="width:100%;text-align:center">إرسال الطلب عبر واتساب ↗</button>
+  <button class="btn" id="clearCart" type="button" style="width:100%;text-align:center;margin-top:10px">تفريغ السلة</button>
+</aside>
+<div class="toast" id="toast"></div>
+
+
+<div class="touch-spot" id="touchSpot" aria-hidden="true"></div>
+<nav class="mobile-bar" aria-label="تنقل سريع">
+  <a href="#home" class="active"><strong>⌂</strong>الرئيسية</a>
+  <a href="#menu"><strong>☕</strong>المنيو</a>
+  <button type="button" id="mobileCart"><strong>🛒</strong>السلة <span id="mobileCartCount">0</span></button>
+  <a href="#contact"><strong>✦</strong>تواصل</a>
+</nav>
+
+<footer><div class="wrap">© 2026 CITY CAFFEINE — All rights reserved[cite: 2].</div></footer><a class="wa" href="https://wa.me/9627XXXXXXXX" target="_blank">◉</a>
+
+<script>
+const filters = document.querySelectorAll(".filter");
+const cards = document.querySelectorAll(".card");
+const cart = JSON.parse(localStorage.getItem("cityCaffeineCart") || "[]");
+const whatsappNumber = "9627XXXXXXXX";
+
+function showToast(message){
+  const toast = document.getElementById("toast");
+  if(!toast) return;
+  toast.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 2200);
+}
+
+filters.forEach(filter => {
+  filter.addEventListener("click", () => {
+    filters.forEach(button => button.classList.remove("active"));
+    filter.classList.add("active");
+    const selected = filter.dataset.f;
+    cards.forEach(card => {
+      card.hidden = !(selected === "all" || selected === card.dataset.c);
+    });
+  });
+});
+
+function renderCart(){
+  const items = document.getElementById("cartItems");
+  const count = document.getElementById("cartCount");
+  const totalEl = document.getElementById("cartTotal");
+  if(!items) return;
+  items.innerHTML = "";
+  let total = 0;
+  let countTotal = 0;
+
+  if(!cart.length){
+    items.innerHTML = "<p>السلة فاضية حالياً ☕</p>";
+  }
+
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+    countTotal += item.qty;
+    const row = document.createElement("div");
+    row.className = "cart-item";
+    row.innerHTML = `
+      <div><strong>${item.name}</strong><br><small>${item.qty} × ${item.price.toFixed(2)} د.أ</small></div>
+      <button class="close-cart" type="button" data-remove="${index}">حذف</button>
+    `;
+    items.appendChild(row);
+  });
+
+  count.textContent = countTotal;
+  const mobileCount = document.getElementById("mobileCartCount");
+  if(mobileCount) mobileCount.textContent = countTotal;
+  localStorage.setItem("cityCaffeineCart", JSON.stringify(cart));
+  totalEl.textContent = total.toFixed(2) + " د.أ";
+
+  items.querySelectorAll("[data-remove]").forEach(button => {
+    button.addEventListener("click", () => {
+      cart.splice(Number(button.dataset.remove), 1);
+      renderCart();
+    });
+  });
+}
+
+document.querySelectorAll(".add").forEach(button => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".card");
+    const name = card.querySelector("h3").textContent.trim();
+    const priceText = card.querySelector(".price").textContent.replace(",", ".");
+    const price = parseFloat(priceText.replace(/[^\d.]/g, "")) || 0;
+    const existing = cart.find(item => item.name === name);
+
+    if(existing) existing.qty += 1;
+    else cart.push({name, price, qty:1});
+
+    renderCart();
+    showToast("تمت إضافة " + name + " إلى السلة 🛒");
+  });
+});
+
+document.getElementById("openCart").addEventListener("click", () => {
+  document.getElementById("cartPanel").classList.add("open");
+});
+document.getElementById("closeCart").addEventListener("click", () => {
+  document.getElementById("cartPanel").classList.remove("open");
+});
+document.getElementById("clearCart").addEventListener("click", () => {
+  cart.length = 0;
+  renderCart();
+  showToast("تم تفريغ السلة");
+});
+
+document.getElementById("sendCart").addEventListener("click", () => {
+  if(!cart.length){
+    showToast("أضف منتجاً أولاً إلى السلة");
+    return;
+  }
+  const lines = cart.map(item => `- ${item.name} × ${item.qty} = ${(item.price*item.qty).toFixed(2)} د.أ`);
+  const total = cart.reduce((sum,item) => sum + item.price * item.qty, 0);
+  const message = "مرحباً CITY CAFFEINE ☕%0Aأريد طلب:%0A" +
+    encodeURIComponent(lines.join("\n") + "\nالمجموع: " + total.toFixed(2) + " د.أ");
+  window.open("https://wa.me/" + whatsappNumber + "?text=" + message, "_blank");
+});
+
+const moodMessages = {
+  focus: "اقتراحنا: إسبريسو أو كابتشينو — تركيز بطعم راقٍ 🎯",
+  relax: "اقتراحنا: لاتيه كلاسيك — لحظة هدوء تستحقها 🌙",
+  energy: "اقتراحنا: آيس كوفي — انتعاش وطاقة ⚡",
+  sweet: "اقتراحنا: بسكوت شوكولاتة مع قهوتك 🍪"
+};
+document.querySelectorAll(".mood-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".mood-btn").forEach(btn => btn.classList.remove("selected"));
+    button.classList.add("selected");
+    document.getElementById("moodResult").textContent = moodMessages[button.dataset.mood];
+  });
+});
+
+const touchSpot = document.getElementById("touchSpot");
+function touchGlow(x,y){
+  if(!touchSpot) return;
+  touchSpot.style.left=x+"px"; touchSpot.style.top=y+"px";
+  touchSpot.classList.remove("show"); void touchSpot.offsetWidth; touchSpot.classList.add("show");
+}
+document.addEventListener("pointerdown", e => {
+  if(e.pointerType === "touch" || e.pointerType === "pen") touchGlow(e.clientX,e.clientY);
+  const target=e.target.closest(".btn,.add,.filter,.mood-btn,.mobile-bar a,.mobile-bar button");
+  if(target){
+    const r=target.getBoundingClientRect(); const size=Math.max(r.width,r.height)*.45;
+    const ripple=document.createElement("span"); ripple.className="ripple"; ripple.style.width=ripple.style.height=size+"px";
+    ripple.style.left=(e.clientX-r.left-size/2)+"px"; ripple.style.top=(e.clientY-r.top-size/2)+"px";
+    if(getComputedStyle(target).position==="static") target.style.position="relative";
+    target.appendChild(ripple); setTimeout(()=>ripple.remove(),600);
+  }
+});
+const mobileCartBtn=document.getElementById("mobileCart");
+if(mobileCartBtn) mobileCartBtn.addEventListener("click",()=>document.getElementById("cartPanel").classList.add("open"));
+
+let points = Number(localStorage.getItem("cityCaffeinePoints") || 0);
+const progress = document.getElementById("rewardProgress");
+const rewardText = document.getElementById("rewardText");
+function updateRewards(){
+  progress.style.width = Math.min(points,100) + "%";
+  localStorage.setItem("cityCaffeinePoints", String(points));
+  rewardText.textContent = points >= 100
+    ? "مبروك! وصلت إلى المكافأة ⭐"
+    : "النقاط الحالية: " + points + " / 100";
+}
+document.getElementById("rewardAdd").addEventListener("click", () => {
+  points = Math.min(points + 10, 100);
+  updateRewards();
+  showToast("تمت إضافة 10 نقاط ⭐");
+});
+document.getElementById("rewardReset").addEventListener("click", () => {
+  points = 0;
+  updateRewards();
+});
+updateRewards();
+renderCart();
+</script>
+
 </body></html>
